@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>看球直播 · 专业观赛信息站点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f4ef;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        /* Hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eae6df;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: #1e1e1e;
+        }
+
+        .hero .subhead {
+            font-size: 1.05rem;
+            color: #5b5b5b;
+            max-width: 640px;
+            border-left: 4px solid #d4a373;
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero .subhead strong {
+            color: #2d2d2d;
+        }
+
+        /* 信息卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem;
+            border: 1px solid #e8e3db;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+        }
+
+        .card .icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #1f1f1f;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            margin-top: 0.25rem;
+        }
+
+        /* 引用块 / 提示框 */
+        .inset-box {
+            background: #f0ece6;
+            border-left: 4px solid #b08968;
+            padding: 1.6rem 2rem;
+            border-radius: 0 14px 14px 0;
+            margin: 2rem 0;
+            font-size: 0.98rem;
+            color: #2b2b2b;
+        }
+
+        .inset-box strong {
+            font-weight: 600;
+        }
+
+        .inset-box a {
+            color: #3d5a80;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .inset-box a:hover {
+            color: #1e3a5f;
+        }
+
+        /* 段落区块 */
+        .section-block {
+            margin: 2rem 0;
+        }
+
+        .section-block h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #1e1e1e;
+            border-bottom: 2px solid #e2dcd2;
+            padding-bottom: 0.4rem;
+        }
+
+        .section-block p {
+            margin-bottom: 1rem;
+            color: #3a3a3a;
+        }
+
+        .section-block ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .section-block li {
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .section-block li::before {
+            content: "·";
+            color: #b08968;
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .faq-item {
+            margin: 1.2rem 0;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #1f1f1f;
+        }
+
+        .faq-item .a {
+            color: #3d3d3d;
+            margin-top: 0.2rem;
+            padding-left: 0.2rem;
+        }
+
+        /* 自然链接样式 */
+        .inline-link {
+            color: #3d5a80;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .inline-link:hover {
+            color: #1e3a5f;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd9d0;
+            font-size: 0.85rem;
+            color: #6e6e6e;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .inset-box {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="hero">
+        <h1>看球直播 · 站点说明</h1>
+        <div class="subhead">
+            面向中文用户的赛事信息聚合平台，提供稳定的直播导航与赛事预告。<br>
+            <strong>看球直播</strong> 持续维护可信的观赛入口，本站作为信息介绍页，帮助新用户快速了解平台定位。
+        </div>
+    </div>
+
+    <!-- 用途卡片区 -->
+    <div class="card-grid">
+        <div class="card">
+            <span class="icon">📡</span>
+            <h3>赛事导航</h3>
+            <p>整合主流赛事直播间链接，覆盖足球、篮球、电竞等热门项目，减少搜索成本。</p>
+        </div>
+        <div class="card">
+            <span class="icon">📅</span>
+            <h3>实时赛程</h3>
+            <p>每日更新比赛时间与对阵信息，支持按联赛、日期筛选，便于提前安排观赛。</p>
+        </div>
+        <div class="card">
+            <span class="icon">🧭</span>
+            <h3>多源切换</h3>
+            <p>提供多个备用信号源，在单一线路不稳定时可快速切换，提升观看连续性。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 + 可信说明 混合段落 -->
+    <div class="section-block">
+        <h2>适合哪些用户？</h2>
+        <p>无论你是重度体育迷，还是偶尔关注焦点战的泛爱好者，<strong>看球直播</strong> 都能帮你节省寻找稳定直播的时间。尤其适合以下场景：</p>
+        <ul>
+            <li>希望在一个页面内获取多场赛事的直播入口，而非逐个访问不同平台；</li>
+            <li>需要快速了解未来 24 小时内的重点比赛日程；</li>
+            <li>在海外或网络环境复杂时，希望通过备用线路保持观赛流畅。</li>
+        </ul>
+    </div>
+
+    <div class="inset-box">
+        <strong>关于本站的说明：</strong> 本页面为独立信息介绍页，并非 <a href="https://cn-main-kanqiu.com">看球直播</a> 的主站入口。我们以客观中立的视角整理平台功能与特点，帮助新访客建立初步认知。所有直播信号均指向外部合法内容源，本站仅做信息汇总与展示。
+    </div>
+
+    <!-- 另一个段落：站点介绍与可信角度 -->
+    <div class="section-block">
+        <h2>站点定位与可信说明</h2>
+        <p><strong>看球直播</strong> 在中文观赛社区中已运营超过两年，积累了一定规模的日常用户。平台不要求用户注册或提供个人资料即可浏览赛程与直播列表，降低了使用门槛。同时，运营团队会对收录的直播源进行定期可用性检测，并在页面中标注信号状态，尽可能减少无效链接的出现。</p>
+        <p>我们在梳理信息时注意到，<a href="https://cn-main-kanqiu.com" class="inline-link">看球直播</a> 的界面设计偏向极简风格，内容层级清晰，新用户通常能在两次点击内找到正在进行的比赛。这种低干扰的体验在同类站点中较为突出。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="section-block" style="margin-top: 2.2rem;">
+        <h2>常见问题摘要</h2>
+        <div class="faq-item">
+            <div class="q">Q：是否需要付费或注册？</div>
+            <div class="a">完全免费，无需注册即可使用全部导航功能。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q：直播源由谁提供？</div>
+            <div class="a">信号来自多个公开内容合作方，平台仅做聚合和状态监测。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">Q：移动端适配如何？</div>
+            <div class="a">页面自适应手机与平板，主播推荐使用浏览器直接访问 <strong>看球直播</strong> 主站。</div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        © 信息介绍页 · 内容定期更新 · 与 <a href="https://cn-main-kanqiu.com" class="inline-link">看球直播</a> 保持独立
+    </div>
+
+</div>
+</body>
+</html>
